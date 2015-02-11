@@ -144,7 +144,7 @@ class RelayDomainForm(TabForms):
     def __init__(self, request, *args, **kwargs):
         self.user = request.user
         self.forms = []
-        if self.user.has_perm("postfix_relay_domains.change_relaydomain"):
+        if self.user.has_perm("modoboa_admin_relaydomains.change_relaydomain"):
             self.forms.append({
                 'id': 'general', 'title': _("General"),
                 'formtpl': 'modoboa_admin_relaydomains/relaydomain_form.html',
