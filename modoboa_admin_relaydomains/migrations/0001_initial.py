@@ -23,6 +23,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 'ordering': ['name'],
+                'db_table': 'postfix_relay_domains_relaydomain',
             },
             bases=(models.Model,),
         ),
@@ -37,6 +38,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 'abstract': False,
+                'db_table': 'postfix_relay_domains_relaydomainalias',
             },
             bases=(models.Model,),
         ),
@@ -47,6 +49,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(help_text='The service name', unique=True, max_length=100, verbose_name='name')),
             ],
             options={
+                'db_table': 'postfix_relay_domains_service',
             },
             bases=(models.Model,),
         ),
