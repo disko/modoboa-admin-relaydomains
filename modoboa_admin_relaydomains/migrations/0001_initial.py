@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(help_text='The alias name', unique=True, max_length=100, verbose_name='name')),
                 ('enabled', models.BooleanField(default=True, help_text='Check to activate this alias', verbose_name='enabled')),
                 ('dates', models.ForeignKey(to='modoboa_admin.ObjectDates')),
-                ('target', models.ForeignKey(verbose_name='target', to='postfix_relay_domains.RelayDomain', help_text='The relay domain this alias points to')),
+                ('target', models.ForeignKey(verbose_name='target', to='modoboa_admin_relaydomains.RelayDomain', help_text='The relay domain this alias points to')),
             ],
             options={
                 'abstract': False,
