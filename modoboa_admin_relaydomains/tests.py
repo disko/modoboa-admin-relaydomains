@@ -1,11 +1,12 @@
 """modoboa-admin-relaydomains unit tests."""
 
 from django.core.urlresolvers import reverse
+from django.test import TestCase
 
 from modoboa.core.factories import UserFactory
 from modoboa.lib import parameters
 from modoboa.lib.tests import ModoTestCase
-from modoboa.lib.test_utils import MapFilesTestCase as BaseTestCase
+from modoboa.lib.test_utils import MapFilesTestCaseMixin
 
 from modoboa_admin import factories
 
@@ -213,9 +214,9 @@ class LimitsTestCase(ModoTestCase, Operations):
         self._check_limit('relay_domain_aliases', 1, 2)
 
 
-class MapFilesTestCase(BaseTestCase):
+class MapFilesTestCase(MapFilesTestCaseMixin, TestCase):
 
-    """Test case for modoboa_admin."""
+    """Test case for modoboa-admin-relaydomains."""
 
     extension = "modoboa_admin_relaydomains"
 
