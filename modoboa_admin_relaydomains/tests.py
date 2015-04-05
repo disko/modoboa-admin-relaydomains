@@ -1,8 +1,11 @@
+"""modoboa-admin-relaydomains unit tests."""
+
 from django.core.urlresolvers import reverse
 
 from modoboa.core.factories import UserFactory
 from modoboa.lib import parameters
 from modoboa.lib.tests import ModoTestCase
+from modoboa.lib.test_utils import MapFilesTestCase as BaseTestCase
 
 from modoboa_admin import factories
 
@@ -208,3 +211,17 @@ class LimitsTestCase(ModoTestCase, Operations):
             'delete', 'relaydomain1.tld', 'relay_domain_alias2.tld'
         )
         self._check_limit('relay_domain_aliases', 1, 2)
+
+
+class MapFilesTestCase(BaseTestCase):
+
+    """Test case for modoboa_admin."""
+
+    extension = "modoboa_admin_relaydomains"
+
+    MAP_FILES = [
+        "sql-relaydomains.cf",
+        "sql-relaydomains-transport.cf",
+        "sql-relaydomain-aliases-transport.cf",
+        "sql-relay-recipient-verification.cf"
+    ]
