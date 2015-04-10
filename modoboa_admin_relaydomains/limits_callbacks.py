@@ -24,14 +24,14 @@ def create_new_limits():
 @events.observe("InitialDataLoaded")
 def load_limits_dependant_data(name):
     """Complete existing pools with new limits."""
-    if name != "limits":
+    if name != "modoboa_admin_limits":
         return
     create_new_limits()
 
 
 @events.observe('GetExtraParameters')
 def extra_parameters(app, level):
-    if app != 'limits' or level != 'A':
+    if app != 'modoboa_admin_limits' or level != 'A':
         return {}
     return {
         'deflt_relay_domains_limit': forms.IntegerField(
