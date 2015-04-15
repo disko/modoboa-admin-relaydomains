@@ -11,5 +11,6 @@ class TestRunner(TestRunnerMixin, unittest.TestCase):
 
     extension = "modoboa_admin_relaydomains"
     dependencies = [
-        "modoboa_admin"
+        "modoboa_admin",
+        "modoboa_admin_limits",
     ]
