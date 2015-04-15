@@ -1,3 +1,5 @@
+"""Factories."""
+
 import factory
 
 from modoboa.core.factories import PermissionFactory
@@ -6,14 +8,22 @@ from . import models
 
 
 class ServiceFactory(factory.DjangoModelFactory):
-    FACTORY_FOR = models.Service
-    FACTORY_DJANGO_GET_OR_CREATE = ('name', )
+
+    """Factory to create Service instances."""
+
+    class Meta:
+        model = models.Service
+        django_get_or_create = ('name', )
 
     name = 'dummy'
 
 
 class RelayDomainFactory(PermissionFactory):
-    FACTORY_FOR = models.RelayDomain
+
+    """Factory to create RelayDomain instances."""
+
+    class Meta:
+        model = models.RelayDomain
 
     target_host = 'external.host.tld'
     enabled = True
@@ -22,6 +32,10 @@ class RelayDomainFactory(PermissionFactory):
 
 
 class RelayDomainAliasFactory(PermissionFactory):
-    FACTORY_FOR = models.RelayDomainAlias
+
+    """Factory to create RelayDomainAlias instances."""
+
+    class Meta:
+        model = models.RelayDomainAlias
 
     enabled = True
