@@ -25,7 +25,7 @@ class AdminRelayDomains(ModoExtension):
 
     name = "modoboa_admin_relaydomains"
     label = "Relay domains"
-    version = "1.0.0"
+    version = "1.0.1"
     description = ugettext_lazy("Relay domains support for Postfix")
     url = "postfix_relay_domains"
 
