@@ -21,4 +21,4 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: static/modoboa_admin_relaydomains/js/relay_domains.js:49
 msgid "Services updated"
-msgstr "'service'-Liste aktualisiert"
+msgstr "'Service'-Liste aktualisiert"
